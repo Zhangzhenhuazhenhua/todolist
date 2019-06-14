@@ -62,7 +62,7 @@ window.addEventListener('load',function () {
     function createObj() {
         let id=todolist[todolist.length-1].id+1;
         let content=textBtn.value;
-        let ctime=new Date().toDateString();
+        let ctime=Array.of(new Date().toLocaleDateString())
         let status=false;
         return{id,content,ctime,status}
     }
