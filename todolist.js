@@ -91,9 +91,18 @@ window.addEventListener('load',function () {
         let id=target.parentNode.id
 
         if (target.tagName=='DEL'){
-            console.log(1);
             todolist=todolist.filter(ele=>ele.id!=id)
              render(filterData(type))
+        }else if(target.tagName=='INPUT'){
+            let arr=todolist.filter(ele=>ele.id==id)[0];
+            if(!arr.status) {
+                arr.status = true;
+            }
+            else if(arr.status){
+                arr.status =false;
+            }
+
+
         }
 
     }
